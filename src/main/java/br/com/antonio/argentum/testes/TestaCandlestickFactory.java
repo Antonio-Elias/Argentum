@@ -1,5 +1,5 @@
 /*
- *Classe de teste da fabrica de candle
+ *Classe de teste da fabrica de candle e Negocio
  */
 package main.java.br.com.antonio.argentum.testes;
 
