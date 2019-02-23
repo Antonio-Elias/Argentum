@@ -3,8 +3,8 @@
  */
 package main.java.br.com.antonio.argentum.testes;
 
+import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
 import main.java.br.com.antonio.argentum.Candlestick;
 import main.java.br.com.antonio.argentum.Negocio;
@@ -16,7 +16,7 @@ import main.java.br.com.antonio.argentum.reader.CandlestickFactory;
  */
 public class TestaCandlestickFactory {
     public static void main(String[] args) {
-        Calendar hoje = Calendar.getInstance();
+        LocalDate hoje = LocalDate.now();
         Negocio nogocio1 = new Negocio(40.5, 100, hoje);
         Negocio nogocio2 = new Negocio(40.5, 100, hoje);
         Negocio nogocio3 = new Negocio(39.8, 100, hoje);
@@ -32,5 +32,7 @@ public class TestaCandlestickFactory {
         System.out.println(candle.getMinimo());
         System.out.println(candle.getMaximo());
         System.out.println(candle.getVolume());
+        
+        System.out.println(candle);
     }
 }

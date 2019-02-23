@@ -3,7 +3,8 @@
  */
 package main.java.br.com.antonio.argentum;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -15,9 +16,9 @@ public final class Candlestick {
     private final double minimo;
     private final double maximo;
     private final double volume;
-    private final Calendar data;
+    private final LocalDate data;
 
-    public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume, Calendar data) {
+    public Candlestick(double abertura, double fechamento, double minimo, double maximo, double volume, LocalDate data) {
         this.abertura = abertura;
         this.fechamento = fechamento;
         this.minimo = minimo;
@@ -46,7 +47,8 @@ public final class Candlestick {
         return volume;
     }
 
-    public Calendar getData() {
+    public LocalDate getData() {
+        
         return data;
     }
     
@@ -57,4 +59,23 @@ public final class Candlestick {
     public boolean isBaixa(){
         return this.abertura > this.fechamento;
     }
+    private String dataFormatada(){
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String novaData = "";
+        try{
+            return novaData = this.data.format(formato);
+           
+        }catch(Exception e){
+            return "ERRO";
+        }
+        
+    }
+
+    @Override
+    public String toString() {
+       
+        return "abertura: " + abertura + " fechamento: "+ fechamento + " minimo: " + minimo 
+                + " maximo: " + maximo + " volume: " + volume + " data: " + dataFormatada();
+    }
+     
 }

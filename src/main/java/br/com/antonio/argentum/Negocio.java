@@ -3,7 +3,7 @@
  */
 package main.java.br.com.antonio.argentum;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 /**
  *
@@ -12,9 +12,9 @@ import java.util.Calendar;
 public final class Negocio {
     private final double preco;
     private final int quantidade;
-    private final Calendar data;
+    private final LocalDate data;
 
-    public Negocio(double preco, int quantidade, Calendar data) {
+    public Negocio(double preco, int quantidade, LocalDate data) {
         this.preco = preco;
         this.quantidade = quantidade;
         this.data = data;
@@ -28,7 +28,7 @@ public final class Negocio {
         return quantidade;
     }
 
-    public Calendar getData() {
+    public LocalDate getData() {
         return data;
     }
     

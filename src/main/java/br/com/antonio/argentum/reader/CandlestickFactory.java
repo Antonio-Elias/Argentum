@@ -4,7 +4,7 @@
 
 package main.java.br.com.antonio.argentum.reader;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.List;
 import main.java.br.com.antonio.argentum.Candlestick;
 import main.java.br.com.antonio.argentum.Negocio;
@@ -14,7 +14,7 @@ import main.java.br.com.antonio.argentum.Negocio;
  * @author Antonio
  */
 public class CandlestickFactory {
-    public Candlestick constroiCandleParaData(Calendar data, List<Negocio> negocios){
+    public Candlestick constroiCandleParaData(LocalDate data, List<Negocio> negocios){
       double maximo = negocios.get(0).getPreco();
       double minimo = negocios.get(0).getPreco();
       double volume = 0;
