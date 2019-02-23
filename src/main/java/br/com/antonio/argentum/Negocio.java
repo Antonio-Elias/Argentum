@@ -1,5 +1,5 @@
 /*
- * Classe que gera os negocios 
+ * Classe geradora.
  */
 package main.java.br.com.antonio.argentum;
 
