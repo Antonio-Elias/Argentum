@@ -15,8 +15,8 @@ import main.java.br.com.antonio.argentum.Negocio;
  */
 public class CandlestickFactory {
     public Candlestick constroiCandleParaData(LocalDate data, List<Negocio> negocios){
-      double maximo = negocios.get(0).getPreco();
-      double minimo = negocios.get(0).getPreco();
+      double maximo = Double.MIN_VALUE;
+      double minimo = Double.MAX_VALUE;
       double volume = 0;
       
         for (Negocio negocio : negocios) {
@@ -28,8 +28,8 @@ public class CandlestickFactory {
             }
         }
         
-        double abertura = negocios.get(0).getPreco();
-        double fechamento = negocios.get(negocios.size()-1).getPreco();
+        double abertura = negocios.isEmpty()? 0: negocios.get(0).getPreco();
+        double fechamento = negocios.isEmpty()? 0 : negocios.get(negocios.size()-1).getPreco();
         
         return new Candlestick(abertura, fechamento, minimo, maximo, volume, data);
     }    
