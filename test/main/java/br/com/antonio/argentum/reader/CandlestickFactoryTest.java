@@ -91,10 +91,12 @@ public class CandlestickFactoryTest {
         CandlestickFactory fabrica = new CandlestickFactory();
         Candlestick candle = fabrica.constroiCandleParaData(hoje, negocios);
         
+        
         assertEquals(40.5, candle.getAbertura(),0.00001);
         assertEquals(40.5, candle.getFechamento(),0.00001);
         assertEquals(40.5, candle.getMinimo(),0.00001);
         assertEquals(40.5, candle.getMaximo(),0.00001);
         assertEquals(40.5, candle.getVolume(),0.00001);
+       
     }
 }
