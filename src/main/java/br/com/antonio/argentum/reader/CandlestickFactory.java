@@ -15,15 +15,16 @@ import main.java.br.com.antonio.argentum.Negocio;
  */
 public class CandlestickFactory {
     public Candlestick constroiCandleParaData(LocalDate data, List<Negocio> negocios){
-      double maximo = Double.MIN_VALUE;
-      double minimo = Double.MAX_VALUE;
+      double maximo = negocios.isEmpty()? 0 : Double.MIN_VALUE;
+      double minimo = negocios.isEmpty()? 0 : Double.MAX_VALUE;
       double volume = 0;
       
         for (Negocio negocio : negocios) {
             volume += negocio.getVolume();
             if(negocio.getPreco() > maximo){
                 maximo = negocio.getPreco();
-            } else if(negocio.getPreco() < minimo){
+            }
+            if(negocio.getPreco() < minimo){
                 minimo = negocio.getPreco();
             }
         }

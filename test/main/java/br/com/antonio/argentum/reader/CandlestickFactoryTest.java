@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * classe de teste de CandlestickFactory
  */
 package main.java.br.com.antonio.argentum.reader;
 
@@ -70,7 +68,7 @@ public class CandlestickFactoryTest {
         System.out.println(candle.getData());
     }
     @Test
-    public void semNegiciosGeraCandleComZeros(){
+    public void semNegociosGeraCandleComZeros(){
         LocalDate hoje = LocalDate.now();
         
         List<Negocio> negocios = Arrays.asList();
@@ -79,6 +77,11 @@ public class CandlestickFactoryTest {
         Candlestick candle = fabrica.constroiCandleParaData(hoje, negocios);
         
         assertEquals(0.0, candle.getVolume(),0.00001);
+        assertEquals(0.0, candle.getAbertura(),0.00001);
+        assertEquals(0.0, candle.getFechamento(),0.00001);
+        assertEquals(0.0, candle.getFechamento(),0.00001);
+        assertEquals(0.0, candle.getMinimo(),0.00001);
+        assertEquals(0.0, candle.getMaximo(),0.00001);
     }
     @Test
     public void apenasUmNegocioGeraCandleComValoresIguais(){
@@ -96,7 +99,7 @@ public class CandlestickFactoryTest {
         assertEquals(40.5, candle.getFechamento(),0.00001);
         assertEquals(40.5, candle.getMinimo(),0.00001);
         assertEquals(40.5, candle.getMaximo(),0.00001);
-        assertEquals(40.5, candle.getVolume(),0.00001);
+        assertEquals(4050.0, candle.getVolume(),0.00001);
        
     }
 }
