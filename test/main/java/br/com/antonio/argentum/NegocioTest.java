@@ -27,6 +27,9 @@ public class NegocioTest {
         Assert.assertEquals(15,n.getData().getDayOfMonth());
         
     }    
-    
-    
+    @Test(expected = IllegalArgumentException.class)
+    public void naoCriaNegocioComDataNulla(){
+        new Negocio(10,5,null);
+    }
+
 }
